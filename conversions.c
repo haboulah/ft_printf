@@ -17,6 +17,12 @@ int	ft_putptr(unsigned long long ptr)
 	int	count;
 
 	count = 0;
+	if (ptr == 0)
+	{
+		count += ft_putstr("(nil)");
+		return (count);
+	}
+	count += ft_putstr("0x");
 	if (ptr >= 16)
 		count += ft_putptr(ptr / 16);
 	count += ft_putchar("0123456789abcdef"[ptr % 16]);
@@ -33,10 +39,7 @@ int	gerer_conversion(char c, va_list args)
 	else if (c == 's')
 		count += ft_putstr(va_arg(args, char *));
 	else if (c == 'p')
-	{
-		count += ft_putstr("0x");
 		count += ft_putptr(va_arg(args, unsigned long long));
-	}
 	else if (c == 'd' || c == 'i')
 		count += ft_putnbr(va_arg(args, int));
 	else if (c == 'u')
