@@ -2,7 +2,7 @@
 
 ## Description du Projet
 
-`ft_printf` est une recréation de la fonction standard `printf` en C. Ce projet fait partie du cursus de l'école 42 et a pour but de comprendre en profondeur le fonctionnement des fonctions variadiques (à nombre variable d'arguments) en C, ainsi que la gestion des formats de chaînes de caractères.
+`ft_printf` est une recréation de la fonction standard `printf` en C. Ce projet fait partie du cursus de l'école 1337 et a pour but de comprendre en profondeur le fonctionnement des fonctions variadiques (à nombre variable d'arguments) en C, ainsi que la gestion des formats de chaînes de caractères.
 
 La fonction `ft_printf` prend en charge plusieurs conversions de base, telles que `%c`, `%s`, `%p`, `%d`, `%i`, `%u`, `%x`, `%X`, et `%%`. Elle imprime des données formatées sur la sortie standard (généralement l'écran), tout comme la fonction `printf` de la bibliothèque standard C.
 
