@@ -6,7 +6,7 @@
 /*   By: haboulah <haboulah@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 23:38:32 by haboulah          #+#    #+#             */
-/*   Updated: 2025/01/04 23:38:46 by haboulah         ###   ########.fr       */
+/*   Updated: 2025/01/06 05:45:40 by haboulah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			count += gerer_conversion(format[i], args);
+			count += handle_conversion(format[i], args);
 		}
 		else
 			count += ft_putchar(format[i]);

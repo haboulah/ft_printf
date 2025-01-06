@@ -1,52 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   conversions.c                                      :+:      :+:    :+:   */
+/*   handle_conversions.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haboulah <haboulah@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 03:08:09 by haboulah          #+#    #+#             */
-/*   Updated: 2025/01/05 03:08:11 by haboulah         ###   ########.fr       */
+/*   Updated: 2025/01/06 05:47:02 by haboulah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putptr(unsigned long long ptr)
+int	handle_conversion(char specifier, va_list args)
 {
 	int	count;
 
 	count = 0;
-	if (ptr == 0)
-	{
-		count += ft_putstr("(nil)");
-		return (count);
-	}
-	count += ft_putstr("0x");
-	if (ptr >= 16)
-		count += ft_putptr(ptr / 16);
-	count += ft_putchar("0123456789abcdef"[ptr % 16]);
-	return (count);
-}
-
-int	gerer_conversion(char c, va_list args)
-{
-	int	count;
-
-	count = 0;
-	if (c == 'c')
+	if (specifier == 'c')
 		count += ft_putchar(va_arg(args, int));
-	else if (c == 's')
+	else if (specifier == 's')
 		count += ft_putstr(va_arg(args, char *));
-	else if (c == 'p')
+	else if (specifier == 'p')
 		count += ft_putptr(va_arg(args, unsigned long long));
-	else if (c == 'd' || c == 'i')
+	else if (specifier == 'd' || specifier == 'i')
 		count += ft_putnbr(va_arg(args, int));
-	else if (c == 'u')
+	else if (specifier == 'u')
 		count += ft_putunbr(va_arg(args, unsigned int));
-	else if (c == 'x' || c == 'X')
-		count += ft_puthex(va_arg(args, unsigned int), c);
-	else if (c == '%')
+	else if (specifier == 'x' || specifier == 'X')
+		count += ft_puthex(va_arg(args, unsigned int), specifier);
+	else if (specifier == '%')
 		count += ft_putchar('%');
 	return (count);
 }

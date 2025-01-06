@@ -6,13 +6,17 @@
 #    By: haboulah <haboulah@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/04 23:35:44 by haboulah          #+#    #+#              #
-#    Updated: 2025/01/04 23:36:32 by haboulah         ###   ########.fr        #
+#    Updated: 2025/01/06 05:50:02 by haboulah         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRCS = ft_printf.c utils.c conversions.c
+SRCS = ft_printf.c \
+       handle_conversions.c \
+       handle_numbers.c \
+       handle_strings.c \
+       handle_hex.c
 
 OBJS = $(SRCS:.c=.o)
 
