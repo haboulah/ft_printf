@@ -1,7 +1,3 @@
-Voici une version du `README.md` avec une mise en page soignée et professionnelle, prête à être utilisée dans votre projet :
-
----
-
 # ft_printf
 
 ## Description
